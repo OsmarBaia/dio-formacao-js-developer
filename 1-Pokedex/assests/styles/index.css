@@ -3,7 +3,7 @@
 :root {
   /* 
     ---     Colors       ---
-    Text and background colors
+    Text and background colors used by javascript
 
     */
   --pokemon-normal-bg-color: #a8a77a;
@@ -105,7 +105,7 @@ main {
 .content {
   width: 100%;
   height: auto;
-  max-width: 1200px;
+  max-width: 1268px;
 }
 
 main section.content {
@@ -116,117 +116,3 @@ main section.content {
 
   gap: 1rem;
 }
-
-.pokemons {
-  width: 100%;
-  height: 100%;
-  list-style: none;
-  align-self: center;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 0.75rem;
-}
-
-.pokemon-card {
-  width: 100%;
-  max-width: 300px;
-  max-height: 200px;
-
-  justify-self: center;
-  padding: 2rem 1rem;
-  border-radius: 1rem;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-.pokemon {
-  width: 100%;
-
-  height: 100%;
-  display: grid;
-  grid-template-areas:
-    "name number"
-    "buttons image"
-    "buttons image";
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 0.5fr 2fr;
-  gap: 1rem;
-  justify-self: center;
-  text-decoration: none;
-}
-
-.pokemon:hover {
-  cursor: pointer;
-}
-
-.pokemon:visited {
-  color: inherit;
-}
-
-.pokemon-name {
-  grid-area: name;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.pokemon-number {
-  grid-area: number;
-  font-size: 1.5rem;
-  font-weight: 500;
-
-  justify-self: flex-end;
-}
-
-.pokemon-details {
-  grid-area: buttons;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.pokemon-details div {
-  width: 6.5rem;
-  height: 2.5rem;
-  border-radius: 1rem;
-  border-color: transparent;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-
-  font-weight: bold;
-  text-align: center;
-  padding-top: 0.5rem;
-}
-
-.pokemon-image {
-  grid-area: image;
-  position: relative;
-}
-
-.pokemon-image img {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-  transform: scaleX(-1);
-  position: absolute;
-  right: 0;
-}
-
-/* @media screen and (max-width: 425px) {
-  main section.content ol {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  main section.content ol {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  main section.content ol {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-} */
