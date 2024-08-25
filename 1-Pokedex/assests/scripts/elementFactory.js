@@ -114,8 +114,6 @@ export class elementFactory {
   }
 
   // Spinner
-  static isSpinnerVisible = false;
-
   static CreateSpinner() {
     const spinner = document.createElement("div");
     spinner.classList.add("spinner");
@@ -132,14 +130,6 @@ export class elementFactory {
     dot3.classList.add("spinner-dot");
     spinner.appendChild(dot3);
 
-    this.isSpinnerVisible = true;
     return spinner;
-  }
-
-  static RemoveSpinner() {
-    const spinner = document.querySelector(".spinner");
-    if (!spinner) return;
-    spinner.remove();
-    this.isSpinnerVisible = false;
   }
 }

@@ -8,13 +8,25 @@ const pokemonsList = document.querySelector(".pokemons");
 let offset = 0;
 let limit = 30;
 const pokemonMaxCount = 151;
+let isSpinnerVisible = false;
+
+function ToggleSpinner() {
+  const spinner = document.querySelector(".spinner");
+  if (!spinner) {
+    pokemonsList.appendChild(elementFactory.CreateSpinner());
+    isSpinnerVisible = true;
+  } else {
+    spinner.remove();
+    isSpinnerVisible = false;
+  }
+}
 
 async function init() {
-  pokemonsList.appendChild(elementFactory.CreateSpinner());
   await fetchAndInsertPokemons(offset, limit);
 }
 
 async function fetchAndInsertPokemons(offset, limit) {
+  ToggleSpinner();
   const data = await pokeapi.getPokemons(offset, limit);
   const results = data.results;
   for (const result of results) {
@@ -22,21 +34,19 @@ async function fetchAndInsertPokemons(offset, limit) {
     const pokemonCard = elementFactory.CreatePokemonCard(pokemonData);
     pokemonsList.appendChild(pokemonCard);
   }
-  elementFactory.RemoveSpinner();
+  ToggleSpinner();
 }
 
 init();
 
 // Rolagem da Pokedex (busca esta vindo desordenada)
-
 window.addEventListener("scroll", function (event) {
   const alturaJanela = window.innerHeight;
   const rect = pokemonsList.getBoundingClientRect();
-  if (elementFactory.isSpinnerVisible) {
+  if (isSpinnerVisible) {
     event.preventDefault();
   } else {
     if (rect.bottom <= alturaJanela + window.scrollY) {
-      pokemonsList.appendChild(CreateSpinner());
       if (offset + limit <= pokemonMaxCount) {
         offset += limit;
 
@@ -45,7 +55,7 @@ window.addEventListener("scroll", function (event) {
         }
 
         if (offset < pokemonMaxCount) {
-          fetchPokemonsInRange(offset, limit);
+          fetchAndInsertPokemons(offset, limit);
         }
       }
     }
