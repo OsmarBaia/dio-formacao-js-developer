@@ -3,7 +3,8 @@ import { pokeapi } from "./pokeApi.js";
 
 //
 const pokemonsList = document.querySelector(".pokemons");
-
+const searchForm = document.querySelector("#search-form");
+const searchInput = document.querySelector("#search-bar");
 //
 let offset = 0;
 let limit = 30;
@@ -25,14 +26,18 @@ async function init() {
   await fetchAndInsertPokemons(offset, limit);
 }
 
+async function fetchAPokemonCard(pokemonRef) {
+  const pokemonData = await pokeapi.getPokemon(pokemonRef);
+  const pokemonCard = elementFactory.CreatePokemonCard(pokemonData);
+  return pokemonCard;
+}
+
 async function fetchAndInsertPokemons(offset, limit) {
   ToggleSpinner();
   const data = await pokeapi.getPokemons(offset, limit);
   const results = data.results;
   for (const result of results) {
-    const pokemonData = await pokeapi.getPokemon(result.name);
-    const pokemonCard = elementFactory.CreatePokemonCard(pokemonData);
-    pokemonsList.appendChild(pokemonCard);
+    pokemonsList.appendChild(await fetchAPokemonCard(result.name));
   }
   ToggleSpinner();
 }
@@ -65,5 +70,47 @@ window.addEventListener("scroll", function (event) {
 // FIM Rolagem da Pokedex
 
 // Filtros de Busca
+
+function searchPokemonOnCards(pokemonRef) {
+  const onScreenPokemons = document.querySelectorAll(".pokemon-card");
+  let wasFound = false;
+
+  onScreenPokemons.forEach((pokemon) => {
+    const pokemonName = pokemon.querySelector(".pokemon-name").textContent;
+    const pokemonNumber = pokemon.querySelector(".pokemon-number").textContent;
+
+    if (
+      pokemonName.toLowerCase().includes(pokemonRef.toLowerCase()) ||
+      pokemonNumber.match(`#${pokemonRef}$`)
+    ) {
+      pokemon.style.display = "block";
+      wasFound = true;
+    } else {
+      pokemon.style.display = "none";
+    }
+  });
+
+  return wasFound;
+}
+
+async function searchPokemonOnAPI(pokemonRef) {
+  const pokemonCard = await fetchAPokemonCard(pokemonRef);
+  if (pokemonCard) {
+    pokemonsList.appendChild(pokemonCard);
+  } else {
+    await fetchAndInsertPokemons(0, pokemonMaxCount);
+    if (!searchPokemonOnCards(pokemonRef)) {
+      alert("Pokemon não encontrado");
+    }
+  }
+}
+
+searchForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  const pokemonRef = searchInput.value;
+  if (!searchPokemonOnCards(pokemonRef)) {
+    searchPokemonOnAPI(pokemonRef);
+  }
+});
 
 // FIM Filtros de Busca
