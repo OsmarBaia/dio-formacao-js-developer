@@ -49,7 +49,7 @@ export class elementFactory {
 
   static CreatePokemonDetailsLinkElement(pokemonData) {
     const pokemonLink = document.createElement("a");
-    pokemonLink.href = "#";
+    pokemonLink.href = `./assests/pages/details.html?id=${pokemonData.id}`;
     pokemonLink.classList.add("pokemon");
     pokemonLink.setAttribute("role", "button");
     pokemonLink.setAttribute(

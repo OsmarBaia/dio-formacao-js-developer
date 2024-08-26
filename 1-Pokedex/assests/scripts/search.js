@@ -50,7 +50,7 @@ function searchPokemonOnCards(pokemonRef) {
 async function searchPokemonOnAPI(pokemonRef) {
   spinner.ToggleSpinnerAt();
   const pokemonsList = document.querySelector(".pokemons");
-  const pokemonCard = await pokeapi.fetchAPokemonCard(pokemonRef);
+  const pokemonCard = await pokeapi.getOnePokemonCard(pokemonRef);
   if (pokemonCard) {
     pokemonsList.appendChild(pokemonCard);
   } else {
