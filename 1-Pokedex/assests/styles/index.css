@@ -116,3 +116,78 @@ main section.content {
   justify-content: flex-start;
   gap: 1rem;
 }
+
+footer {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filter-container {
+  width: 100%;
+  max-width: 1268px;
+  align-self: center;
+  position: relative;
+
+  background-color: transparent;
+}
+
+.filter-menu {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  padding: 1rem;
+
+  height: auto;
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 0.25rem;
+
+  position: absolute;
+  right: 1rem;
+  bottom: 2.25rem;
+}
+
+.filter-menu button {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 4.5rem;
+  border-radius: 1rem;
+}
+
+.filter-menu button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.filter-menu button:active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.filter-btn {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  padding: 4px 10px;
+  border-radius: 5rem;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.filter-btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.filter-btn:active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

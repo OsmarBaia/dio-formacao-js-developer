@@ -72,6 +72,7 @@ window.addEventListener("scroll", function (event) {
 // Filtros de Busca
 
 function searchPokemonOnCards(pokemonRef) {
+  ToggleSpinner();
   const onScreenPokemons = document.querySelectorAll(".pokemon-card");
   let wasFound = false;
 
@@ -90,10 +91,12 @@ function searchPokemonOnCards(pokemonRef) {
     }
   });
 
+  ToggleSpinner();
   return wasFound;
 }
 
 async function searchPokemonOnAPI(pokemonRef) {
+  ToggleSpinner();
   const pokemonCard = await fetchAPokemonCard(pokemonRef);
   if (pokemonCard) {
     pokemonsList.appendChild(pokemonCard);
@@ -103,6 +106,7 @@ async function searchPokemonOnAPI(pokemonRef) {
       alert("Pokemon não encontrado");
     }
   }
+  ToggleSpinner();
 }
 
 searchForm.addEventListener("submit", async function (event) {
@@ -112,5 +116,21 @@ searchForm.addEventListener("submit", async function (event) {
     searchPokemonOnAPI(pokemonRef);
   }
 });
+
+async function filterPokemonByType(type) {
+  await fetchAndInsertPokemons(0, pokemonMaxCount);
+  const onScreenPokemons = document.querySelectorAll(".pokemon-card");
+  onScreenPokemons.forEach((pokemon) => {
+    const pokemonTypes = pokemon.querySelectorAll(".pokemon-type");
+    pokemonTypes.forEach((pokemonType) => {
+      if (pokemonType.textContent === type) {
+        pokemon.style.display = "block";
+        return;
+      } else {
+        pokemon.style.display = "none";
+      }
+    });
+  });
+}
 
 // FIM Filtros de Busca

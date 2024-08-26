@@ -36,6 +36,7 @@ export class elementFactory {
 
     pokemonData.types.forEach((type) => {
       const pokemonType = document.createElement("div");
+      pokemonType.classList.add("pokemon-type");
       pokemonType.textContent = type.type.name;
       const colors = this.GetElementColors(type.type.name);
       pokemonType.style.backgroundColor = `var(${colors[1]})`;
