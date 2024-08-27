@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: auto;
+  /* border: 2px solid black; */
+}
+
+.back-button {
+  padding: 0.75rem 1rem;
+  background: transparent;
+}
+
+.back-button:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.back-button:active {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.details-container {
+  height: auto;
+  width: 100%;
+  max-width: 363px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-type {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-image {
+  max-width: 300px;
+}
+
+.nav-item {
+  font-size: smaller;
+  font-weight: bold;
+  margin: 0;
+}
+
+.evolution-image {
+  max-width: 80px;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.bi-arrow-right {
+  font-size: 24px;
+  color: #6c757d;
+}
+
+.moves-table-container {
+  overflow-y: auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.moves-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.moves-table {
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* 
+
+.pokemon-card {
+  height: 100%;
+  border-radius: 15px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.bulbasaur-card {
+  background-color: #58c063;
+}
+
+.charmander-card {
+  background-color: #ff7d47;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-badge {
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+.stat-bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  height: 5px;
+}
+
+.stat-bar-fill {
+  height: 5px;
+  border-radius: 5px;
+
+  .back-button{
+}
+} 
+  
+
+*/
