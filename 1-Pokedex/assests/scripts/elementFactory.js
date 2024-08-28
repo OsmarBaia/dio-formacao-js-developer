@@ -1,12 +1,11 @@
 export class elementFactory {
   static GetElementColors(typeName) {
     const typePrefix = `--pokemon-${typeName}`;
-    const colors = [
+    return [
       `${typePrefix}-bg-color`,
       `${typePrefix}-btn-color`,
       `${typePrefix}-text-color`,
     ];
-    return colors;
   }
 
   static SetPokemonTextElementStyle(pokemonData, element) {

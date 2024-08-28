@@ -1,5 +1,5 @@
-import { elementFactory } from "./elementFactory.js";
-import { spinner } from "./spinner.js";
+import {elementFactory} from "./elementFactory.js";
+import {spinner} from "./spinner.js";
 
 export class pokeapi {
   static pokemonMaxCount = 151;
@@ -17,8 +17,7 @@ export class pokeapi {
 
   static async getOnePokemonCard(pokemonRef) {
     const pokemonData = await this.getPokemon(pokemonRef);
-    const pokemonCard = elementFactory.CreatePokemonCard(pokemonData);
-    return pokemonCard;
+    return elementFactory.CreatePokemonCard(pokemonData);
   }
 
   //Refatorar
@@ -36,21 +35,5 @@ export class pokeapi {
 
   static async getAllPokemons() {
     return await this.getPokemonsInRange(0, this.pokemonMaxCount);
-  }
-
-  static async getAllPokemonsOfType(type) {
-    const data = await this.getAllPokemons();
-    const results = data.results;
-    const pokemons = [];
-    for (const result of results) {
-      const pokemon = await this.getPokemon(result.name);
-      pokemon.types.forEach((pokeType) => {
-        if (pokeType.type.name === type) {
-          pokemons.push(pokemon);
-          return;
-        }
-      });
-    }
-    return pokemons;
   }
 }

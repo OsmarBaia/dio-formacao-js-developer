@@ -3,16 +3,21 @@ import {elementFactory} from "./elementFactory.js";
 import {spinner} from "./spinner.js";
 
 const detailsContainer = document.querySelector(".details-container");
-window.addEventListener('load', loadPokemonDetails);
+window.addEventListener('load', init);
+
+async function init(){
+    const spinnerHolder = document.querySelector("body.container-fluid");
+    spinner.ToggleSpinnerAt(spinnerHolder);
+    await loadPokemonDetails();
+    spinner.ToggleSpinnerAt(spinnerHolder);
+}
 
 async function loadPokemonDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const pokemonRef = urlParams.get("id");
-    spinner.ToggleSpinnerAt(detailsContainer);
     const data = await pokeapi.getPokemon(pokemonRef);
     detailsContainer.innerHTML = await PokemonDetails(data);
     StyledDetailsContainer(data);
-    spinner.ToggleSpinnerAt(detailsContainer);
 }
 
 function StyledDetailsContainer(data) {
@@ -34,8 +39,6 @@ function StyledDetailsContainer(data) {
         element.style.backgroundColor = `var(${_typeColor[0]})`;
         element.style.color = `var(${_typeColor[2]})`;
     });
-
-    detailsContainer.querySelector(".thead").style.backgroundColor = `var(${colors[0]})`;
 }
 
 function DetailsHeader() {
@@ -52,7 +55,7 @@ function DetailsHeader() {
 
 function DetailsTabs(pokemonData) {
     return `
-                <ul class="nav nav-tabs mt-3 d-flex flex-row align-items-center justify-content-center" id="${
+                <ul class="nav nav-tabs mt-3 d-flex flex-row align-items-center" id="${
         pokemonData.name}-Tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="about-tab" data-bs-toggle="tab"
@@ -96,7 +99,7 @@ function PokemonDescription(pokemonData) {
         .join("");
 
     return ` 
-        <div class="w-100 d-flex flex-column align-items-center">
+        <div class="pokemon-preview w-100 d-flex flex-column align-items-center">
             <div class="w-100 d-flex align-items-center justify-content-between mb-2 px-3">
                 <h5 class="pokemon-name text-capitalize fw-bold fs-1">${pokemonData.name}</h5>
                 <span class="pokemon-number fs-3 fw-medium opacity-50">#${pokemonData.id}</span>
@@ -193,9 +196,12 @@ async function PokemonEvolutions(pokemonData) {
         if (i > 0) {
             evolutionHTML += `
                 <div class="col text-center">                   
-                    <i class="bi bi-arrow-down"></i>
-                     <p class="fw-bold">Lvl ${pokemons[i].min_level}</p>
-                     <i class="bi bi-arrow-down"></i>
+                    
+                   ${pokemons[i].min_level ? `
+                            <i class="bi bi-arrow-down my-2"></i>
+                            <p class="fw-bold">Lvl ${pokemons[i].min_level}</p>
+                            <i class="bi bi-arrow-down my-2"></i>` : `<i class="bi bi-arrow-down fw-bold my-2"></i>`
+                    }    
                 </div>`;
         }
 
@@ -241,7 +247,7 @@ function PokemonMoves(pokemonData) {
 
     return `
    <div class="tab-pane fade" id="moves-${pokemonData.name}" role="tabpanel" aria-labelledby="moves-tab">
-        <div class="moves-table-container w-100 h-auto">
+        <div class="moves-table-container mx-auto h-auto">
             <table class="table table-striped moves-table">
                 <thead>
                     <tr>

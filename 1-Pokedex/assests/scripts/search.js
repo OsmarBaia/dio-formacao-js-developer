@@ -11,6 +11,7 @@ const pokemonMaxCount = 151;
 const submitEvent = new Event("submit", { bubbles: true });
 
 document.getElementById("search-button").addEventListener("click", function () {
+  if(spinner.isSpinnerVisible){return;}
   if (searchBar.classList.contains("expanded")) {
     searchBar.classList.remove("expanded");
     searchIcon.classList.remove("bi-x-lg");
@@ -64,6 +65,7 @@ async function searchPokemonOnAPI(pokemonRef) {
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
+  if(spinner.isSpinnerVisible){return;}
   const pokemonRef = searchBar.value;
   if (!searchPokemonOnCards(pokemonRef)) {
     searchPokemonOnAPI(pokemonRef);

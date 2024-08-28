@@ -15,6 +15,7 @@ let isFiltering = false;
 
 filterButton.addEventListener("click", () => {
   const filterBtnIcon = filterButton.querySelector("i");
+  if(spinner.isSpinnerVisible){return;}
   if (filterMenu.classList.contains("hidden")) {
     filterButton.classList.add("active");
     filterMenu.classList.remove("hidden");
