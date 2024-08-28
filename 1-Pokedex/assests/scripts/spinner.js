@@ -3,12 +3,12 @@ import { elementFactory } from "./elementFactory.js";
 export class spinner {
   static isSpinnerVisible = false;
 
-  static ToggleSpinnerAt() {
+  static ToggleSpinnerAt(element) {
     const spinner = document.querySelector(".spinner");
-    const pokemonsList = document.querySelector(".pokemons");
+    // const pokemonsList = document.querySelector(".pokemons");
 
     if (!spinner) {
-      pokemonsList.appendChild(elementFactory.CreateSpinner());
+      element.appendChild(elementFactory.CreateSpinner());
       this.isSpinnerVisible = true;
     } else {
       spinner.remove();

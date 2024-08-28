@@ -25,13 +25,13 @@ export class pokeapi {
   static async fetchAndInsertPokemons(offset, limit) {
     const pokemonsList = document.querySelector(".pokemons");
 
-    spinner.ToggleSpinnerAt();
+    spinner.ToggleSpinnerAt(pokemonsList);
     const data = await this.getPokemonsInRange(offset, limit);
     const results = data.results;
     for (const result of results) {
       pokemonsList.appendChild(await this.getOnePokemonCard(result.name));
     }
-    spinner.ToggleSpinnerAt();
+    spinner.ToggleSpinnerAt(pokemonsList);
   }
 
   static async getAllPokemons() {

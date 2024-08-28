@@ -4,6 +4,7 @@ import { spinner } from "./spinner.js";
 const form = document.getElementById("search-form");
 const searchBar = document.getElementById("search-bar");
 const searchIcon = document.getElementById("search-icon");
+const pokemonsList = document.querySelector(".pokemons");
 
 const pokemonMaxCount = 151;
 
@@ -24,7 +25,7 @@ document.getElementById("search-button").addEventListener("click", function () {
 });
 
 function searchPokemonOnCards(pokemonRef) {
-  spinner.ToggleSpinnerAt();
+  spinner.ToggleSpinnerAt(pokemonsList);
   const onScreenPokemons = document.querySelectorAll(".pokemon-card");
   let wasFound = false;
 
@@ -43,13 +44,12 @@ function searchPokemonOnCards(pokemonRef) {
     }
   });
 
-  spinner.ToggleSpinnerAt();
+  spinner.ToggleSpinnerAt(pokemonsList);
   return wasFound;
 }
 
 async function searchPokemonOnAPI(pokemonRef) {
-  spinner.ToggleSpinnerAt();
-  const pokemonsList = document.querySelector(".pokemons");
+  spinner.ToggleSpinnerAt(pokemonsList);
   const pokemonCard = await pokeapi.getOnePokemonCard(pokemonRef);
   if (pokemonCard) {
     pokemonsList.appendChild(pokemonCard);
@@ -59,7 +59,7 @@ async function searchPokemonOnAPI(pokemonRef) {
       alert("Pokemon não encontrado");
     }
   }
-  spinner.ToggleSpinnerAt();
+  spinner.ToggleSpinnerAt(pokemonsList);
 }
 
 form.addEventListener("submit", async function (event) {

@@ -24,13 +24,15 @@ body {
 }
 
 .details-container {
-  height: auto;
+  height: 100%;
   width: 100%;
-  max-width: 325px;
+  max-width: 340px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  overflow-y: auto;
 }
 
 .pokemon-type {
@@ -54,6 +56,10 @@ body {
   font-weight: bold;
   margin: 0;
   padding: 0;
+
+}
+.nav-item.active{
+  transform: scale(1.1);
 }
 
 .evolution-image {
@@ -67,6 +73,11 @@ body {
 .bi-arrow-right {
   font-size: 24px;
   color: #6c757d;
+}
+.tab-content {
+  position: relative;
+  width: 100%;
+  overflow: auto;
 }
 
 .moves-table-container {
@@ -87,3 +98,4 @@ body {
   border-collapse: separate;
   border-spacing: 0;
 }
+

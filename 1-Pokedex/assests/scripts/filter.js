@@ -6,6 +6,7 @@ import { spinner } from "./spinner.js";
 const filterButton = document.querySelector("#filter-button");
 const filterMenu = document.querySelector("#filter-menu");
 const filterType = document.querySelectorAll(".filter-type");
+const pokemonsList = document.querySelector(".pokemons");
 
 const maxFilterStacks = 2;
 let filterStacks = [];
@@ -78,14 +79,14 @@ async function addFilter(type) {
   if (filterStacks.length < maxFilterStacks) {
     filterStacks.push(type);
     isFiltering = true;
-    spinner.ToggleSpinnerAt();
+    spinner.ToggleSpinnerAt(pokemonsList);
     if (filterStacks.length === 1) {
       await getRemainingPokemons();
       togglePokemonVisibilityByType(type);
     } else {
       togglePokemonVisibilityByType(type);
     }
-    spinner.ToggleSpinnerAt();
+    spinner.ToggleSpinnerAt(pokemonsList);
   }
 }
 
