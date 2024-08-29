@@ -11,8 +11,16 @@ body {
 }
 
 .back-button {
-  padding: 0.75rem 1rem;
+  padding: .5rem .5rem;
+  margin: .5rem;
   background: transparent;
+  text-align: center;
+  line-height: 1;
+}
+
+.back-button i {
+  background-color: transparent;
+
 }
 
 .back-button:hover {
@@ -77,10 +85,7 @@ body {
   /*padding: 10px;*/
 }
 
-.bi-arrow-right {
-  font-size: 24px;
-  color: #6c757d;
-}
+
 .tab-content {
   position: relative;
   width: 100%;
@@ -136,7 +141,7 @@ body {
     width: 100%;
     max-width: 768px;
     max-height: 768px;
-    margin:  auto auto;
+    margin:  0;
     padding: 0;
 
     display: grid;
@@ -147,11 +152,11 @@ body {
     grid-template-rows: .1fr .9fr;
     gap:1rem;
 
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* sombra sutil */
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* sombra sutil */
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
+
   }
   .hero-container {
     grid-area: navHeader;

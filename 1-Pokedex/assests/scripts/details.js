@@ -39,14 +39,16 @@ function StyledDetailsContainer(data) {
         element.style.backgroundColor = `var(${_typeColor[0]})`;
         element.style.color = `var(${_typeColor[2]})`;
     });
+
+
 }
 
 function DetailsHeader() {
     return `
     <div class="hero-container w-100 px-1 pt-3 pb-3">
-        <button class="back-button rounded-5 border-0">
+        <button class=" back-button rounded-5 border-0">
             <a href="../../index.html" class="w-100 h-100">
-                <i class="bi bi-arrow-left fw-bold text-black w-100 h-100"></i>
+                <i class="bi bi-arrow-left-circle fs-1 fw-bolder text-black w-100 h-100"></i>
             </a>
         </button>
     </div>
@@ -198,9 +200,9 @@ async function PokemonEvolutions(pokemonData) {
                 <div class="col text-center">                   
                     
                    ${pokemons[i].min_level ? `
-                            <i class="bi bi-arrow-down my-2"></i>
-                            <p class="fw-bold">Lvl ${pokemons[i].min_level}</p>
-                            <i class="bi bi-arrow-down my-2"></i>` : `<i class="bi bi-arrow-down fw-bold my-2"></i>`
+                            <i class="bi bi-arrow-down fs-4 fw-bold my-2"></i>
+                            <p class="fw-bold fs-5 my-2">Lvl ${pokemons[i].min_level}</p>
+                            <i class="bi bi-arrow-down fs-4 fw-bold my-2"></i>` : `<i class="bi bi-arrow-down fs-1 fw-bold my-2"></i>`
                     }    
                 </div>`;
         }
