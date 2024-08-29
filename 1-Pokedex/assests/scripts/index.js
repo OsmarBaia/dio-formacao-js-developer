@@ -16,8 +16,8 @@ async function init() {
 init();
 
 // Rolagem da Pokedex (busca esta vindo desordenada)
-
-window.addEventListener("scroll", function (event) {
+const container = document.querySelector('.container');
+container.addEventListener("scroll", function (event) {
   const alturaJanela = window.innerHeight;
   const rect = pokemonsList.getBoundingClientRect();
   if (spinner.isSpinnerVisible || isFiltering) {

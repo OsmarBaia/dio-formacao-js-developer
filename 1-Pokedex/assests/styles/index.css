@@ -1,129 +1,168 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
-  /* 
-    ---     Colors       ---
-    Text and background colors used by javascript
+    /*
+      ---     Colors       ---
+      Text and background colors used by javascript
 
-    */
-  --pokemon-normal-bg-color: #a8a77a;
-  --pokemon-normal-btn-color: #6d6d4e;
-  --pokemon-normal-text-color: #fff;
+      */
+    --pokemon-normal-bg-color: #a8a77a;
+    --pokemon-normal-btn-color: #6d6d4e;
+    --pokemon-normal-text-color: #fff;
 
-  --pokemon-fire-bg-color: #ee8130;
-  --pokemon-fire-btn-color: #a04000;
-  --pokemon-fire-text-color: #fff;
+    --pokemon-fire-bg-color: #ee8130;
+    --pokemon-fire-btn-color: #a04000;
+    --pokemon-fire-text-color: #fff;
 
-  --pokemon-water-bg-color: #6390f0;
-  --pokemon-water-btn-color: #0a438c;
-  --pokemon-water-text-color: #fff;
+    --pokemon-water-bg-color: #6390f0;
+    --pokemon-water-btn-color: #0a438c;
+    --pokemon-water-text-color: #fff;
 
-  --pokemon-electric-bg-color: #f7d02c;
-  --pokemon-electric-btn-color: #b89a00;
-  --pokemon-electric-text-color: #000;
+    --pokemon-electric-bg-color: #f7d02c;
+    --pokemon-electric-btn-color: #b89a00;
+    --pokemon-electric-text-color: #000;
 
-  --pokemon-grass-bg-color:   #7ac74c;
-  --pokemon-grass-btn-color:  #4a732c;
-  --pokemon-grass-text-color: #fff;
+    --pokemon-grass-bg-color: #7ac74c;
+    --pokemon-grass-btn-color: #4a732c;
+    --pokemon-grass-text-color: #fff;
 
-  --pokemon-ice-bg-color: #96d9d6;
-  --pokemon-ice-btn-color: #4ac2c7;
-  --pokemon-ice-text-color: #000;
+    --pokemon-ice-bg-color: #96d9d6;
+    --pokemon-ice-btn-color: #4ac2c7;
+    --pokemon-ice-text-color: #000;
 
-  --pokemon-fighting-bg-color: #c22e28;
-  --pokemon-fighting-btn-color: #7d1f1a;
-  --pokemon-fighting-text-color: #fff;
+    --pokemon-fighting-bg-color: #c22e28;
+    --pokemon-fighting-btn-color: #7d1f1a;
+    --pokemon-fighting-text-color: #fff;
 
-  --pokemon-poison-bg-color: #a33ea1;
-  --pokemon-poison-btn-color: #64275a;
-  --pokemon-poison-text-color: #fff;
+    --pokemon-poison-bg-color: #a33ea1;
+    --pokemon-poison-btn-color: #64275a;
+    --pokemon-poison-text-color: #fff;
 
-  --pokemon-ground-bg-color: #e2bf65;
-  --pokemon-ground-btn-color: #835c3b;
-  --pokemon-ground-text-color: #fff;
+    --pokemon-ground-bg-color: #e2bf65;
+    --pokemon-ground-btn-color: #835c3b;
+    --pokemon-ground-text-color: #fff;
 
-  --pokemon-flying-bg-color: #a98ff3;
-  --pokemon-flying-btn-color: #5d47a3;
-  --pokemon-flying-text-color: #fff;
+    --pokemon-flying-bg-color: #a98ff3;
+    --pokemon-flying-btn-color: #5d47a3;
+    --pokemon-flying-text-color: #fff;
 
-  --pokemon-psychic-bg-color: #f95587;
-  --pokemon-psychic-btn-color: #c2185b;
-  --pokemon-psychic-text-color: #fff;
+    --pokemon-psychic-bg-color: #f95587;
+    --pokemon-psychic-btn-color: #c2185b;
+    --pokemon-psychic-text-color: #fff;
 
-  --pokemon-bug-bg-color: #a6b91a;
-  --pokemon-bug-btn-color: #7a8914;
-  --pokemon-bug-text-color: #fff;
+    --pokemon-bug-bg-color: #a6b91a;
+    --pokemon-bug-btn-color: #7a8914;
+    --pokemon-bug-text-color: #fff;
 
-  --pokemon-rock-bg-color: #b6a136;
-  --pokemon-rock-btn-color: #746c18;
-  --pokemon-rock-text-color: #fff;
+    --pokemon-rock-bg-color: #b6a136;
+    --pokemon-rock-btn-color: #746c18;
+    --pokemon-rock-text-color: #fff;
 
-  --pokemon-ghost-bg-color: #735797;
-  --pokemon-ghost-btn-color: #4a336c;
-  --pokemon-ghost-text-color: #fff;
+    --pokemon-ghost-bg-color: #735797;
+    --pokemon-ghost-btn-color: #4a336c;
+    --pokemon-ghost-text-color: #fff;
 
-  --pokemon-dragon-bg-color: #6f35fc;
-  --pokemon-dragon-btn-color: #3d2c8d;
-  --pokemon-dragon-text-color: #fff;
+    --pokemon-dragon-bg-color: #6f35fc;
+    --pokemon-dragon-btn-color: #3d2c8d;
+    --pokemon-dragon-text-color: #fff;
 
-  --pokemon-fairy-bg-color: #d685ad;
-  --pokemon-fairy-btn-color: #ac4776;
-  --pokemon-fairy-text-color: #fff;
+    --pokemon-fairy-bg-color: #d685ad;
+    --pokemon-fairy-btn-color: #ac4776;
+    --pokemon-fairy-text-color: #fff;
 
-  --pokemon-steel-bg-color: #b7b7ce;
-  --pokemon-steel-btn-color: #5c5c76;
-  --pokemon-steel-text-color: #fff;
+    --pokemon-steel-bg-color: #b7b7ce;
+    --pokemon-steel-btn-color: #5c5c76;
+    --pokemon-steel-text-color: #fff;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    background-color: white;
 }
 
 body {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+body .container {
+    width: 100%;
+    height: 100%;
+
 }
 
 header {
-  width: 100%;
-  height: auto;
-  max-width: 1268px;
+    width: 100%;
+    height: auto;
+    max-width: 1268px;
 }
 
 main {
-  width: 100%;
-  height: auto;
-  max-width: 1268px;
+    width: 100%;
+    height: auto;
+    max-width: 1268px;
 }
 
 .content {
-  width: 100%;
-  height: auto;
-  max-width: 1268px;
+    width: 100%;
+    height: auto;
+    max-width: 768px;
 }
 
 main section.content {
-  padding: 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1rem;
+    padding: 1rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
 }
 
 footer {
-  width: 100%;
-  height: auto;
-  position: fixed;
-  bottom: 0.5rem;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0.5rem;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (min-width: 431px) {
+    body {
+        padding: 1rem;
+        position: relative;
+    }
+
+    body .container {
+        width: 100%;
+        max-width: 768px;
+        max-height: 768px;
+        margin: auto auto;
+        padding: 0;
+        overflow-y: auto;
+        border-radius: 1rem;
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+
+    header, main, footer {
+        width: 100%;
+        max-width: 768px;
+        margin: auto auto;
+        padding: 0;
+    }
+
+    footer{
+        position: sticky;
+        bottom: 0.5rem;
+    }
 }
