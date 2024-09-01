@@ -12,10 +12,10 @@ Apresenta JavaScript do zero, desde os fundamentos desta linguagem de programaç
 
 ## Projetos
 
-| Desafio       | Descrição     | Branch | 
+| Desafio       | Descrição     | Link | 
 | ------------- | ------------- | ------------- |
-| 1.            |               | []()       |
-| 2.            |               | []()       |
+| 1.PokeDex           |  Projeto consiste na criação de um front-end para uma listagem de Pokémons, a qual é obtida através do acesso e consumo da API PokeAPI, além disso foi criando um página secundaria que mostra os detalhes de cada Pokémon, e filtros de buscar.            | [Link](https://github.com/OsmarBaia/dio-formacao-js-developer/tree/main/1-Pokedex)       |
+| 2.PortFolio           | Projeto consiste em criar um mini portifólio / currículo, composto de acordeons manualmente criados, o qual é alimentado dinamicamente com base em um JSON.            | [Link](https://github.com/OsmarBaia/dio-formacao-js-developer/tree/main/2-Mini-Portfolio)       |
 
 ## Certificado
 
