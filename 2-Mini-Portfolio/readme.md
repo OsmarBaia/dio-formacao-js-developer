@@ -1,6 +1,6 @@
 # Pokedex
 ## Objetivo
-Projeto consiste em criar um mini portifólio / currículo, composto acordeons manualmente criados, o qual são alimentado dinamicamente com base em um JSON.
+Projeto consiste em criar um mini portifólio / currículo, composto de acordeons manualmente criados, o qual é preenchido dinamicamente com base em um JSON, consumido por requisição HTTP.
 
 ## Portrait View
 ![OsmarBaia-Portfolio-psp](https://github.com/user-attachments/assets/827ba1f5-8ffe-44be-bbd6-9e09fa15b952)
