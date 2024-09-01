@@ -1,0 +1,71 @@
+{
+  "name": "Osmar Baia",
+  "photo": "https://avatars.githubusercontent.com/u/88497805?s=400&u=0553fbd04f764abb9a3c30d00bebd718fbc0f877&v=4",
+  "job": "Freelancer - Full Stack Web Developer",
+  "location": "Belém - PA",
+  "phone": "(91) 98132-0546",
+  "email": "osmarneto.dev@gmail.com",
+  "skills": {
+    "hardSkills": [
+      {
+        "name": "Nodejs",
+        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/nodejs.png"
+      },
+      {
+        "name": "Java",
+        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/java.png"
+      },
+      {
+        "name": "Angular",
+        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/angular.png"
+      },
+      {
+        "name": "React",
+        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/react.png"
+      },
+      {
+        "name": "Mongodb",
+        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/mongodb.png"
+      },
+      {
+        "name": "Postgresql",
+        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/postgresql.png"
+      }
+    ],
+    "softSkills": [
+      "Empatia",
+      "Liderança",
+      "Trabalho em equipe",
+      "Flexibilidade",
+      "Organização"
+    ]
+  },
+  "languages": [
+    "Português BR",
+    "Inglês (intermediário)"
+  ],
+  "portfolio": [
+    {
+      "name": "DashBoard",
+      "url": "https://github.com/RenanJPaula/js-developer-pokedex",
+      "github": true
+    },
+    {
+      "name": "Restaurante",
+      "url": "https://github.com/RenanJPaula/js-developer-portfolio",
+      "github": true
+    }
+  ],
+  "professionalExperience": [
+    {
+      "name": "Freelancer - Full Stack Web Developer",
+      "period": "2024 - até o momento",
+      "description": ""
+    },
+    {
+      "name": "Auxiliar Administrativo",
+      "period": "2010 - 2024",
+      "description": ""
+    }
+  ]
+}
