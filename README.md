@@ -21,6 +21,6 @@ Apresenta JavaScript do zero, desde os fundamentos desta linguagem de programaç
 
 <div align="center">
 
-
+![Certificado](https://hermes.dio.me/certificates/cover/DS7SBHOM.jpg)
 
 </div>
